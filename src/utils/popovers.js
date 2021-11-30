@@ -1,7 +1,7 @@
-import { elementContains } from './helpers';
+import { elementContains, isServer } from './helpers';
 
 export function showPopover(opts) {
-  if (document) {
+  if (!isServer() && document) {
     document.dispatchEvent(
       new CustomEvent('show-popover', {
         detail: opts,
@@ -11,7 +11,7 @@ export function showPopover(opts) {
 }
 
 export function hidePopover(opts) {
-  if (document) {
+  if (!isServer() && document) {
     document.dispatchEvent(
       new CustomEvent('hide-popover', {
         detail: opts,
@@ -21,7 +21,7 @@ export function hidePopover(opts) {
 }
 
 export function togglePopover(opts) {
-  if (document) {
+  if (!isServer() && document) {
     document.dispatchEvent(
       new CustomEvent('toggle-popover', {
         detail: opts,
@@ -31,7 +31,7 @@ export function togglePopover(opts) {
 }
 
 export function updatePopover(opts) {
-  if (document) {
+  if (!isServer() && document) {
     document.dispatchEvent(
       new CustomEvent('update-popover', {
         detail: opts,

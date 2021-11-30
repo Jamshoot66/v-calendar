@@ -1,7 +1,7 @@
 <script>
 import { h } from 'vue';
 import { createPopper } from '@popperjs/core';
-import { on, off, elementContains } from '../../utils/helpers';
+import { on, off, elementContains, isServer } from '../../utils/helpers';
 import { isFunction, omit } from '../../utils/_';
 import CustomTransition from '../CustomTransition/CustomTransition.vue';
 
@@ -164,6 +164,7 @@ export default {
   },
   methods: {
     addEvents() {
+      if (isServer()) return;
       on(this.popoverEl, 'click', this.onClick);
       on(this.popoverEl, 'mouseover', this.onMouseOver);
       on(this.popoverEl, 'mouseleave', this.onMouseLeave);
@@ -177,6 +178,7 @@ export default {
       on(document, 'update-popover', this.onDocumentUpdatePopover);
     },
     removeEvents() {
+      if (isServer()) return;
       off(this.popoverEl, 'click', this.onClick);
       off(this.popoverEl, 'mouseover', this.onMouseOver);
       off(this.popoverEl, 'mouseleave', this.onMouseLeave);

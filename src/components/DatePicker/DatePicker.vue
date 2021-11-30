@@ -12,6 +12,7 @@ import {
   pageIsBetweenPages,
   on,
   off,
+  isServer,
 } from '../../utils/helpers';
 import { isObject, isArray, defaultsDeep } from '../../utils/_';
 import {
@@ -373,12 +374,14 @@ export default {
     this.refreshDateParts();
   },
   mounted() {
+    if (isServer()) return;
     // Handle escape key presses
     on(document, 'keydown', this.onDocumentKeyDown);
     // Clear drag on background click
     on(document, 'click', this.onDocumentClick);
   },
   beforeUnmount() {
+    if (isServer()) return;
     // Clean up handlers
     off(document, 'keydown', this.onDocumentKeyDown);
     off(document, 'click', this.onDocumentClick);
@@ -418,6 +421,7 @@ export default {
       }
     },
     onDocumentClick(e) {
+      if (isServer()) return;
       if (
         document.body.contains(e.target) &&
         !elementContains(this.$el, e.target)

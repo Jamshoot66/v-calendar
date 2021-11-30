@@ -184,3 +184,7 @@ export function hash(str: string): number {
 }
 
 /* eslint-enable no-bitwise */
+
+export function isServer() {
+  return typeof document === 'undefined' || typeof window === 'undefined';
+}
