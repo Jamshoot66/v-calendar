@@ -23,7 +23,7 @@ yarn add v-calendar-ssr@3.0.0-alpha.6-ssr
 </template>
 
 <script>
-  import { DatePicker } from 'v-calendar-ssr';
+  import { DatePicker } from 'v-calendar-ssr-mod';
 
   export default {
     components: {
