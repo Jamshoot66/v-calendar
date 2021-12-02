@@ -1,15 +1,12 @@
 {
-  "name": "v-calendar-ssr-test",
-  "version": "3.0.0-alpha.6-ssr-test-3",
+  "name": "v-calendar-ssr",
+  "version": "3.0.0-alpha.6-ssr",
   "private": false,
-  "description": "A clean and extendable plugin for building simple attributed calendars in Vue.js.",
-  "author": "Nathan Reyes <nathanreyes@me.com>",
+  "description": "Fork of Nathan Reyes' <nathanreyes@me.com> calendar",
   "main": "lib/cjs/index.js",
-  "module": "lib/esm/index.js",
   "unpkg": "lib/vcalendar.min.js",
   "types": "types/index.d.ts",
   "license": "MIT",
-  "homepage": "https://vcalendar.io",
   "keywords": [
     "vue",
     "vuejs",
@@ -24,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/nathanreyes/v-calendar"
+    "url": "https://github.com/Jamshoot66/v-calendar"
   },
   "scripts": {
     "serve": "vue-cli-service serve",
